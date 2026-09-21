@@ -652,3 +652,16 @@ footer {
     object-fit: cover;
     display: block;
 }
+.card-image {
+    height: 220px !important;
+    max-height: 220px !important;
+    overflow: hidden !important;
+}
+
+.card-image img {
+    width: 100% !important;
+    height: 220px !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
