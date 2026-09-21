@@ -665,3 +665,14 @@ footer {
     object-fit: cover !important;
     display: block !important;
 }
+/* CENTRAR ARTÍCULOS */
+
+.article-header {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-body {
+    margin-left: auto;
+    margin-right: auto;
+}
