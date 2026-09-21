@@ -640,3 +640,15 @@ footer {
     object-fit: cover;
     display: block;
 }
+.card-image {
+    height: 220px;
+    overflow: hidden;
+    display: block;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
