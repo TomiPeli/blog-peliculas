@@ -676,3 +676,22 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+/* CABECERA DE TODAS LAS PÁGINAS */
+
+.site-header {
+    width: 100%;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
