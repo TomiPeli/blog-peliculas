@@ -7,82 +7,373 @@
 
     <title>Películas | CineRadar</title>
 
+    <meta name="description"
+        content="Descubre recomendaciones, noticias y novedades sobre películas en CineRadar.">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="header">
+    <!-- HEADER -->
 
-    <div class="container header-content">
+    <header class="header">
 
-        <a href="index.html" class="logo">
-            <span class="logo-icon">🎬</span>
-            CineRadar
-        </a>
+        <div class="container header-content">
 
-        <nav class="nav">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎬</span>
+                CineRadar
+            </a>
 
-            <a href="index.html">Inicio</a>
+            <nav class="nav">
 
-            <a href="peliculas.html">Películas</a>
+                <a href="index.html">Inicio</a>
 
-            <a href="#">Series</a>
+                <a href="peliculas.html" class="active">Películas</a>
 
-            <a href="netflix.html">Netflix</a>
+                <a href="#">Series</a>
 
-            <a href="#">Estrenos</a>
+                <a href="netflix.html">Netflix</a>
 
-        </nav>
+                <a href="#">Estrenos</a>
 
-        <button class="search-button">
-            🔍
-        </button>
+            </nav>
 
-    </div>
+            <button class="search-button">
+                🔍
+            </button>
 
-</header>
+        </div>
 
-
-<main class="single-article">
-
-    <div class="article-header container">
-
-        <span class="article-category">
-            PELÍCULAS
-        </span>
-
-        <h1>Películas</h1>
-
-        <p class="article-intro">
-            Descubre noticias, recomendaciones, novedades y todo lo relacionado con el mundo del cine.
-        </p>
-
-    </div>
+    </header>
 
 
-    <div class="article-body container">
+    <!-- CONTENIDO -->
 
-        <p>
-            En CineRadar encontrarás información sobre las películas más interesantes,
-            próximos estrenos, recomendaciones y novedades del mundo del cine.
-        </p>
+    <main class="single-article">
 
-        <p>
-            Desde grandes producciones hasta películas que quizás todavía no conozcas,
-            iremos recopilando contenidos para ayudarte a descubrir qué merece la pena ver.
-        </p>
+        <div class="article-header container">
 
-    </div>
+            <span class="article-category">
+                PELÍCULAS
+            </span>
 
-</main>
+            <h1>Películas</h1>
+
+            <p class="article-intro">
+                Descubre noticias, recomendaciones, estrenos y curiosidades
+                sobre las películas que están dando que hablar.
+            </p>
+
+        </div>
 
 
-<footer class="footer">
+        <!-- ARTÍCULOS -->
 
-    <div class="container">
-        <p>© 2026 CineRadar. Todos los derechos reservados.</p>
-    </div>
+        <section class="articles container">
+
+            <div class="articles-grid">
+
+
+                <!-- ARTÍCULO 1 -->
+
+                <article class="card">
+
+                    <a href="articulo.html" class="card-image image-one">
+
+                        <span class="image-category">
+                            PELÍCULAS
+                        </span>
+
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            18 septiembre 2026
+                        </div>
+
+                        <h3>
+                            Las películas más esperadas que llegan próximamente
+                        </h3>
+
+                        <p>
+                            Estos son algunos de los estrenos que más expectación
+                            están generando entre los aficionados al cine.
+                        </p>
+
+                        <a href="articulo.html" class="read-more">
+                            Leer artículo →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTÍCULO 2 -->
+
+                <article class="card">
+
+                    <a href="#" class="card-image image-three">
+
+                        <span class="image-category">
+                            TERROR
+                        </span>
+
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            16 septiembre 2026
+                        </div>
+
+                        <h3>
+                            10 películas de terror que merecen una oportunidad
+                        </h3>
+
+                        <p>
+                            Una selección de películas de terror para quienes
+                            buscan algo diferente para su próxima noche de cine.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Leer artículo →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTÍCULO 3 -->
+
+                <article class="card">
+
+                    <a href="#" class="card-image image-four">
+
+                        <span class="image-category">
+                            CIENCIA FICCIÓN
+                        </span>
+
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            15 septiembre 2026
+                        </div>
+
+                        <h3>
+                            Las mejores películas de ciencia ficción
+                        </h3>
+
+                        <p>
+                            Mundos futuristas, viajes espaciales y grandes
+                            aventuras que han marcado el género.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Leer artículo →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTÍCULO 4 -->
+
+                <article class="card">
+
+                    <a href="#" class="card-image image-five">
+
+                        <span class="image-category">
+                            RECOMENDACIONES
+                        </span>
+
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            14 septiembre 2026
+                        </div>
+
+                        <h3>
+                            Películas que tienes que ver al menos una vez
+                        </h3>
+
+                        <p>
+                            Una selección de películas de diferentes épocas
+                            y géneros que han dejado huella.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Leer artículo →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTÍCULO 5 -->
+
+                <article class="card">
+
+                    <a href="#" class="card-image image-six">
+
+                        <span class="image-category">
+                            ESTRENOS
+                        </span>
+
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            13 septiembre 2026
+                        </div>
+
+                        <h3>
+                            Los estrenos de cine que no te puedes perder
+                        </h3>
+
+                        <p>
+                            Las películas que llegan próximamente a las salas
+                            y que conviene tener en el radar.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Leer artículo →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ARTÍCULO 6 -->
+
+                <article class="card">
+
+                    <a href="#" class="card-image image-two">
+
+                        <span class="image-category">
+                            ACCIÓN
+                        </span>
+
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            12 septiembre 2026
+                        </div>
+
+                        <h3>
+                            Películas de acción para una noche de cine
+                        </h3>
+
+                        <p>
+                            Algunas recomendaciones para disfrutar de una
+                            buena dosis de acción y adrenalina.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Leer artículo →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-main">
+
+                <a href="index.html" class="footer-logo">
+                    🎬 CineRadar
+                </a>
+
+                <p>
+                    Noticias, películas, series y entretenimiento.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Cine</h3>
+
+                <a href="peliculas.html">Películas</a>
+
+                <a href="#">Estrenos</a>
+
+                <a href="#">Recomendaciones</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Series</h3>
+
+                <a href="#">Series</a>
+
+                <a href="netflix.html">Netflix</a>
+
+                <a href="#">Streaming</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Información</h3>
+
+                <a href="#">Sobre nosotros</a>
+
+                <a href="#">Contacto</a>
+
+                <a href="#">Privacidad</a>
+
+                <a href="#">Cookies</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © 2026 CineRadar. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
 
 </footer>
 
