@@ -1,201 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Series | CineRadar</title>
-
-    <meta name="description"
-        content="Descubre recomendaciones de series, novedades, géneros y contenido sobre las series que merece la pena conocer.">
-
-    <link rel="stylesheet" href="style.css">
+    <title>Series | Blog Películas</title>
+    <meta name="description" content="Descubre artículos sobre series de misterio, ciencia ficción, acción, comedia, drama y recomendaciones.">
 
     <style>
-        .series-page {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
             background: #fff;
+            color: #111;
+            line-height: 1.6;
         }
 
-        .series-hero {
-            background: #111;
-            color: #fff;
-            padding: 80px 0;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        .series-hero-content {
-            max-width: 850px;
-        }
-
-        .series-label {
-            display: inline-block;
-            color: #d4a017;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 18px;
-        }
-
-        .series-hero h1 {
-            font-size: clamp(40px, 6vw, 64px);
-            line-height: 1.08;
-            margin-bottom: 25px;
-        }
-
-        .series-hero p {
-            color: #ccc;
-            font-size: 19px;
-            line-height: 1.8;
-            max-width: 750px;
-        }
-
-        .series-intro {
-            max-width: 850px;
+        .container {
+            width: min(1180px, 92%);
             margin: 0 auto;
-            padding: 70px 0 40px;
         }
 
-        .series-intro h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+        .header {
+            background: #111;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .series-intro p {
-            color: #555;
-            font-size: 17px;
-            line-height: 1.85;
-            margin-bottom: 20px;
+        .header-content {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
         }
 
-        .series-section {
-            padding: 30px 0 80px;
-        }
-
-        .series-section-title {
-            margin-bottom: 35px;
-        }
-
-        .series-section-title span {
-            display: block;
-            color: #a57e00;
-            font-size: 12px;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 25px;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
+            white-space: nowrap;
         }
 
-        .series-section-title h2 {
-            font-size: 32px;
+        .logo-icon {
+            font-size: 24px;
         }
 
-        .series-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .nav {
+            display: flex;
+            align-items: center;
             gap: 28px;
         }
 
+        .nav a {
+            color: #ccc;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .nav a:hover {
+            color: white;
+        }
+
+        .search-button {
+            border: none;
+            background: #292929;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+
+        .hero {
+            background: #111;
+            color: white;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .hero span {
+            color: #c49a00;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            margin: 15px 0 20px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: #bbb;
+            font-size: 18px;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: auto;
+            padding: 70px 20px 30px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .series-grid {
+            width: min(1100px, 92%);
+            margin: 45px auto 90px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
         .series-card {
-            border: 1px solid #e5e5e5;
-            background: #fff;
-            padding: 30px;
-            min-height: 300px;
-            transition: transform .2s, box-shadow .2s;
+            display: block;
+            background: #f5f5f5;
+            padding: 35px 28px;
+            border-radius: 8px;
+            transition: .25s;
+            border: 1px solid #eee;
         }
 
         .series-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,.08);
+            background: #eeeeee;
         }
 
         .series-icon {
             font-size: 42px;
-            margin-bottom: 22px;
-        }
-
-        .series-card-category {
-            color: #a57e00;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1.3px;
-            margin-bottom: 12px;
+            margin-bottom: 18px;
         }
 
         .series-card h3 {
-            font-size: 22px;
-            line-height: 1.3;
-            margin-bottom: 15px;
+            font-size: 23px;
+            margin-bottom: 12px;
         }
 
         .series-card p {
             color: #666;
-            line-height: 1.7;
             font-size: 15px;
-        }
-
-        .series-guide {
-            background: #f5f5f5;
-            padding: 70px 0;
-        }
-
-        .series-guide-content {
-            max-width: 850px;
-        }
-
-        .series-guide h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
-
-        .series-guide p {
-            color: #555;
-            font-size: 17px;
-            line-height: 1.85;
-            margin-bottom: 20px;
-        }
-
-        .series-list {
-            margin-top: 25px;
-            padding-left: 20px;
-        }
-
-        .series-list li {
-            margin-bottom: 14px;
-            color: #444;
             line-height: 1.7;
         }
 
-        .series-bottom {
-            padding: 70px 0;
+        .guide {
+            background: #111;
+            color: white;
+            padding: 75px 20px;
+        }
+
+        .guide-content {
+            max-width: 800px;
+            margin: auto;
             text-align: center;
         }
 
-        .series-bottom h2 {
-            font-size: 32px;
-            margin-bottom: 18px;
+        .guide h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
         }
 
-        .series-bottom p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #666;
+        .guide p {
+            color: #bbb;
+            font-size: 17px;
             line-height: 1.8;
         }
 
+        .bottom {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .bottom h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .bottom p {
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 35px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
         @media (max-width: 800px) {
+
+            .nav {
+                display: none;
+            }
+
             .series-grid {
                 grid-template-columns: 1fr;
             }
 
-            .series-hero {
-                padding: 60px 0;
-            }
-
-            .series-intro,
-            .series-section,
-            .series-guide,
-            .series-bottom {
-                padding-left: 5%;
-                padding-right: 5%;
+            .hero {
+                padding: 65px 20px;
             }
         }
     </style>
@@ -203,416 +235,190 @@
 
 <body>
 
-    <!-- HEADER -->
+<header class="header">
 
-    <header class="header">
+    <div class="container header-content">
 
-        <div class="container header-content">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🎬</span>
+            Blog Películas
+        </a>
 
-            <a href="index.html" class="logo">
-                <span class="logo-icon">🎬</span>
-                CineRadar
-            </a>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="peliculas.html">Películas</a>
+            <a href="series.html">Series</a>
+            <a href="netflix.html">Netflix</a>
+            <a href="estrenos-cine.html">Estrenos</a>
+        </nav>
 
-            <nav class="nav">
-                <a href="index.html">Inicio</a>
-                <a href="peliculas.html">Películas</a>
-                <a href="series.html" class="active">Series</a>
-                <a href="netflix.html">Netflix</a>
-                <a href="estrenos-cine.html">Estrenos</a>
-            </nav>
+        <button class="search-button">⌕</button>
 
-            <button class="search-button">
-                🔍
-            </button>
+    </div>
 
-        </div>
+</header>
 
-    </header>
 
+<section class="hero">
 
-    <main class="series-page">
+    <span>Blog Películas</span>
 
-        <!-- HERO -->
+    <h1>El mundo de las series</h1>
 
-        <section class="series-hero">
+    <p>
+        Explora diferentes géneros, descubre nuevas historias
+        y encuentra ideas para tu próxima serie.
+    </p>
 
-            <div class="container series-hero-content">
+</section>
 
-                <span class="series-label">
-                    📺 SERIES
-                </span>
 
-                <h1>
-                    El mundo de las series
-                </h1>
+<section class="intro">
 
-                <p>
-                    Descubre nuevas historias, géneros y recomendaciones para
-                    encontrar tu próxima serie favorita. En CineRadar repasamos
-                    diferentes tipos de series y las tendencias que están
-                    marcando el mundo del entretenimiento.
-                </p>
+    <h2>Explora por género</h2>
 
-            </div>
+    <p>
+        Las series pueden ofrecer experiencias completamente diferentes.
+        Elige una categoría para descubrir nuestros artículos.
+    </p>
 
-        </section>
+</section>
 
 
-        <!-- INTRODUCCIÓN -->
+<section class="series-grid">
 
-        <section class="series-intro">
+    <a href="series-misterio.html" class="series-card">
 
-            <h2>
-                ¿Qué puedes encontrar en esta sección?
-            </h2>
+        <div class="series-icon">🕵️</div>
 
-            <p>
-                Las series se han convertido en una de las principales formas
-                de entretenimiento. Cada año aparecen nuevas producciones y
-                también regresan historias conocidas con nuevas temporadas.
-                Esto hace que elegir qué ver pueda resultar complicado.
-            </p>
+        <h3>Misterio</h3>
 
-            <p>
-                En esta sección de CineRadar queremos reunir recomendaciones,
-                ideas y diferentes tipos de contenidos relacionados con las
-                series. Desde historias de misterio hasta aventuras, ciencia
-                ficción, comedia o drama.
-            </p>
+        <p>
+            Series de misterio que pueden sorprenderte,
+            con secretos, investigaciones y preguntas que
+            te harán querer descubrir qué ocurre.
+        </p>
 
-            <p>
-                La idea es que puedas descubrir propuestas diferentes y
-                encontrar nuevas opciones dependiendo del tipo de historia
-                que tengas ganas de ver.
-            </p>
+    </a>
 
-        </section>
 
+    <a href="series-ciencia-ficcion.html" class="series-card">
 
-        <!-- TEMAS -->
+        <div class="series-icon">🚀</div>
 
-        <section class="series-section">
+        <h3>Ciencia ficción</h3>
 
-            <div class="container">
+        <p>
+            Series para viajar a otros mundos y descubrir
+            historias relacionadas con tecnología,
+            espacio y futuros imaginarios.
+        </p>
 
-                <div class="series-section-title">
+    </a>
 
-                    <span>DESCUBRE</span>
 
-                    <h2>
-                        Series según lo que te apetece ver
-                    </h2>
+    <a href="series-accion.html" class="series-card">
 
-                </div>
+        <div class="series-icon">💥</div>
 
+        <h3>Acción</h3>
 
-                <div class="series-grid">
+        <p>
+            Series con acción y aventura para quienes
+            buscan historias con ritmo, conflictos
+            y situaciones inesperadas.
+        </p>
 
+    </a>
 
-                    <article class="series-card">
 
-                        <div class="series-icon">
-                            🕵️
-                        </div>
+    <a href="series-comedia.html" class="series-card">
 
-                        <div class="series-card-category">
-                            MISTERIO
-                        </div>
+        <div class="series-icon">😂</div>
 
-                        <h3>
-                            Series de misterio que pueden sorprenderte
-                        </h3>
+        <h3>Comedia</h3>
 
-                        <p>
-                            Historias llenas de secretos, investigaciones,
-                            personajes enigmáticos y acontecimientos que te
-                            mantienen pendiente de cada episodio.
-                        </p>
+        <p>
+            Series para desconectar, reír y disfrutar
+            de personajes y situaciones capaces de
+            convertir un episodio en un buen momento.
+        </p>
 
-                    </article>
+    </a>
 
 
-                    <article class="series-card">
+    <a href="series-drama.html" class="series-card">
 
-                        <div class="series-icon">
-                            🚀
-                        </div>
+        <div class="series-icon">❤️</div>
 
-                        <div class="series-card-category">
-                            CIENCIA FICCIÓN
-                        </div>
+        <h3>Drama</h3>
 
-                        <h3>
-                            Series para viajar a otros mundos
-                        </h3>
+        <p>
+            Historias centradas en personajes,
+            relaciones, decisiones y situaciones
+            que pueden dejar huella.
+        </p>
 
-                        <p>
-                            Mundos futuristas, tecnología, viajes espaciales
-                            y situaciones que plantean preguntas sobre el
-                            futuro y la humanidad.
-                        </p>
+    </a>
 
-                    </article>
 
+    <a href="series-recomendaciones.html" class="series-card">
 
-                    <article class="series-card">
+        <div class="series-icon">⭐</div>
 
-                        <div class="series-icon">
-                            💥
-                        </div>
+        <h3>Recomendaciones</h3>
 
-                        <div class="series-card-category">
-                            ACCIÓN
-                        </div>
+        <p>
+            Ideas para descubrir nuevas series
+            y encontrar historias que puedan
+            encajar con tus gustos.
+        </p>
 
-                        <h3>
-                            Series con acción y aventura
-                        </h3>
+    </a>
 
-                        <p>
-                            Para quienes buscan historias con ritmo, desafíos,
-                            persecuciones, conflictos y personajes enfrentados
-                            a situaciones difíciles.
-                        </p>
+</section>
 
-                    </article>
 
+<section class="guide">
 
-                    <article class="series-card">
+    <div class="guide-content">
 
-                        <div class="series-icon">
-                            😂
-                        </div>
+        <h2>¿No sabes qué serie empezar?</h2>
 
-                        <div class="series-card-category">
-                            COMEDIA
-                        </div>
+        <p>
+            Piensa primero en el tipo de experiencia que buscas.
+            Si quieres resolver enigmas, prueba el misterio.
+            Si buscas acción, descubre historias llenas de ritmo.
+            Y si simplemente quieres desconectar, una comedia
+            puede ser una buena opción.
+        </p>
 
-                        <h3>
-                            Series para desconectar y reír
-                        </h3>
+    </div>
 
-                        <p>
-                            Historias ligeras y personajes que pueden convertirse
-                            en una buena opción para relajarse después de un
-                            día largo.
-                        </p>
+</section>
 
-                    </article>
 
+<section class="bottom">
 
-                    <article class="series-card">
+    <h2>Siempre hay una historia por descubrir</h2>
 
-                        <div class="series-icon">
-                            ❤️
-                        </div>
+    <p>
+        Explora nuestros artículos sobre cine y series y descubre
+        nuevas ideas para tus próximas sesiones frente a la pantalla.
+    </p>
 
-                        <div class="series-card-category">
-                            DRAMA
-                        </div>
+</section>
 
-                        <h3>
-                            Historias que dejan huella
-                        </h3>
 
-                        <p>
-                            Relaciones personales, decisiones difíciles y
-                            personajes que evolucionan a lo largo de la
-                            historia.
-                        </p>
+<footer>
 
-                    </article>
+    <div class="container">
+        © 2026 Blog Películas · Cine y series
+    </div>
 
-
-                    <article class="series-card">
-
-                        <div class="series-icon">
-                            ⭐
-                        </div>
-
-                        <div class="series-card-category">
-                            RECOMENDACIONES
-                        </div>
-
-                        <h3>
-                            Series que merecen una oportunidad
-                        </h3>
-
-                        <p>
-                            Una selección de ideas para quienes quieren salir
-                            de las opciones habituales y descubrir nuevas
-                            historias.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- GUÍA -->
-
-        <section class="series-guide">
-
-            <div class="container series-guide-content">
-
-                <h2>
-                    ¿Cómo elegir una nueva serie?
-                </h2>
-
-                <p>
-                    Cuando tenemos muchas opciones disponibles, elegir una
-                    serie puede convertirse en una tarea complicada. Una buena
-                    forma de empezar es pensar primero en el tipo de historia
-                    que nos apetece ver.
-                </p>
-
-                <p>
-                    También puede ser útil tener en cuenta cuánto tiempo
-                    queremos dedicarle. Algunas historias tienen capítulos
-                    cortos que pueden verse rápidamente, mientras que otras
-                    requieren más tiempo y atención.
-                </p>
-
-                <p>
-                    Antes de empezar una serie también puedes fijarte en
-                    aspectos como el género, la duración de los episodios,
-                    el número de temporadas y el tipo de historia.
-                </p>
-
-                <ul class="series-list">
-
-                    <li>
-                        🎭 Elige un género que te interese.
-                    </li>
-
-                    <li>
-                        ⏱️ Comprueba la duración aproximada de los episodios.
-                    </li>
-
-                    <li>
-                        📚 Averigua si buscas una historia corta o varias temporadas.
-                    </li>
-
-                    <li>
-                        ⭐ Descubre recomendaciones de otros espectadores.
-                    </li>
-
-                    <li>
-                        🍿 Reserva tiempo para disfrutar de la serie sin prisas.
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </section>
-
-
-        <!-- FINAL -->
-
-        <section class="series-bottom">
-
-            <div class="container">
-
-                <h2>
-                    Sigue descubriendo CineRadar
-                </h2>
-
-                <p>
-                    Además de series, en CineRadar encontrarás contenidos sobre
-                    películas, estrenos, Netflix, recomendaciones y diferentes
-                    géneros cinematográficos. Explora las diferentes secciones
-                    para encontrar algo nuevo que ver.
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="container footer-content">
-
-            <div class="footer-main">
-
-                <a href="index.html" class="footer-logo">
-                    🎬 CineRadar
-                </a>
-
-                <p>
-                    Noticias, películas, series y entretenimiento.
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    Cine
-                </h3>
-
-                <a href="peliculas.html">Películas</a>
-                <a href="estrenos-cine.html">Estrenos</a>
-                <a href="peliculas-que-deberias-ver.html">
-                    Recomendaciones
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    Series
-                </h3>
-
-                <a href="series.html">Series</a>
-                <a href="netflix.html">Netflix</a>
-                <a href="series.html">Streaming</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    Información
-                </h3>
-
-                <a href="#">Sobre nosotros</a>
-                <a href="#">Contacto</a>
-                <a href="#">Privacidad</a>
-                <a href="#">Cookies</a>
-
-            </div>
-
-        </div>
-
-
-        <div class="container footer-bottom">
-
-            <p>
-                © 2026 CineRadar. Todos los derechos reservados.
-            </p>
-
-        </div>
-
-    </footer>
+</footer>
 
 </body>
-
 </html>
 
 </body>
